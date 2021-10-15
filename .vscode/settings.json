@@ -1,0 +1,13 @@
+{
+    "markdownlint.config": {
+        "default": true,
+        "MD003": { "style": "atx" },
+        "MD007": false,
+        "MD025": false,
+        "MD026": false,
+        "MD035": false
+    },
+    "cSpell.words": [
+        "pytest"
+    ]
+}
