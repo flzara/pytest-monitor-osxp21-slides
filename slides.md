@@ -30,6 +30,7 @@ Let's consider a resource critical function whose job is to check a number prima
 With pytest, a possible test would be:
 
 ```python
+import pytest
 from my_package import is_prime
 
 @pytest.mark.parametrize('nums', [2, 3, 997, 104743, 982451653])
