@@ -23,10 +23,16 @@ Open Source Experience 2021
 
 # Pytest-monitor
 
-Slide 2.0
+Let's consider a resource critical function whose job is to check a number primality. 
+
+Questions
+ * how do we monitor the resource consumption ?
+ * how do we compare resource usage between runs ?
 
 ---
-Let's consider a resource critical function whose job is to check a number primality. Here is its associated test:
+
+A possible test would be:
+
 ```python
 from my_package import is_prime
 
@@ -34,10 +40,9 @@ from my_package import is_prime
 def test_prime(nums):
     assert is_prime(nums)
 ```
-
 ---
 
-## Pytest-monitor  introduction
+## Pytest-monitor  
 
 Slide 2.1
 
