@@ -49,6 +49,7 @@ Questions
 
 Pytest-Monitor
  * it is a pytest plugin
+ * Few requirements needed (sqlite3, python, memory_profiler and psutils)
  * Track resources (like memory and compute time) consumed by any test suite
  * Historize the results
 
@@ -63,9 +64,11 @@ def test_prime(nums):
 
 ---
 
-## Pytest-monitor conclusion
+## Pytest-monitor results
 
-Slide 2.2
+ - Faire le run du test. 
+ - Montre un run pytest avec monitor
+ - faire une query dans la base pour montrer des résultats.
 
 --- ---
 # Monitor-server-API
