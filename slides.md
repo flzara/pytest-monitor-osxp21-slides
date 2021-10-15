@@ -26,25 +26,13 @@ Open Source Experience 2021
 Slide 2.0
 
 ---
-
+Let's consider a resource critical function whose job is to check a number primality. Here is its associated test:
 ```python
-import pytest
-import time
+from my_package import is_prime
 
-
-# Tests are run and monitored by default: no boilerplate code needed
-def test_sleep1():
-    time.sleep(1)
-
-# Run as a test, but do not monitor:
-@pytest.mark.monitor_skip_test
-def test_sleep2():
-    time.sleep(2)
-
-# Support for parametrized tests (monitored by default):
-@pytest.mark.parametrize(('range_max', 'other'), [(10, "10"), (100, "100"), (1000, "1000"), (10000, "10000")])
-def test_heavy(range_max, other):
-    assert len(['a' * i for i in range(range_max)]) == range_max
+@pytest.mark.parametrize('nums', [2, 3, 997, 104743, 982451653])
+def test_prime(nums):
+    assert is_prime(nums)
 ```
 
 ---
