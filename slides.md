@@ -56,6 +56,10 @@ def test_prime(nums):
 
 ![Pytest Monitor run in terminal](ptm_run.png)
 
+---
+
+## Let's read our data!
+
 ```sql
 sqlite> select ITEM, TOTAL_TIME, CPU_USAGE, MEM_USAGE, ITEM_PATH from TEST_METRICS;
 test_sleep1|1.00518894195557|0.0|0.76953125|pkg1.test_mod1
@@ -73,22 +77,61 @@ test_force_monitor|5.0064685344696|0.998707964621156|1.51953125|pkg4.test_mod_a
 
 # Monitor-server-API
 
-Slide 3.0.1
+Leverage pytest-monitor:
+
+ - dedicated Python API to query and fetch your data
+ - dedicated storage (through REST API), but works seemlessly with a local pytest-monitor database.
+ - enable parallelism in your test session.
 
 ---
 
 ## Monitor-server-API introduction
 
-Coucou <!-- .element: class="fragment" data-fragment-index="2" -->
+The package is split in 2 components:
+ * The REST server for storing and fetching data (flask + uwsgi + SQLite or PostGreSQL)
+ * The API designed to easily query and filter data either from either (requests + Pandas)
+<!-- Coucou .element: class="fragment" data-fragment-index="2" -->
+<!-- ReCoucou .element: class="fragment" data-fragment-index="1" -->
 
-Recoucou <!-- .element: class="fragment" data-fragment-index="1" -->
+---
+
+## Monitor-server-API example, sending data
+
+```bash
+bash $> pytest --remote http://my-monitor-server.org/api/v1 --tag demo=yes
+
+=============================================================================================== test session starts ===============================================================================================
+platform linux -- Python 3.6.8, pytest-4.4.1, py-1.8.0, pluggy-0.11.0
+rootdir: /home/jdieu/projects/perso/pytest-monitor
+plugins: monitor-1.6.0
+collected 14 items                                                                                                                                                                                                
+pkg1/test_mod1.py ......         [ 42%]
+pkg1/test_mod2.py .              [ 50%]
+pkg2/test_mod_a.py .             [ 57%]
+pkg3/test_mod_cl.py .            [ 64%]
+pkg4/test_mod_a.py ..            [ 78%]
+pkg5/test_special_pytest.py sss  [100%]
+
+====================================================================================== 11 passed, 3 skipped in 20.13 seconds ======================================================================================
+```
+
+---
+
+## Monitor-server-API example, fetching data
+
+
+```python
+from monitor_server_api import Monitor
+
+mon = Monitor('http://my-monitor-server.org/api/v1')
+sessions = mon.list_sessions()
+df = sessions.to_df()
+
+```
 
 ---
 
 ## Monitor-server-API conclusion
-
-Slide 3.2
-
 --- ---
 
 # Questions?
