@@ -54,8 +54,8 @@ def test_prime(nums):
 
 ## Pytest-monitor results
 
-* Faire le run du test.
-* Montre un run pytest avec monitor
+![Pytest Monitor run in terminal](ptm_run.png)
+
 * faire une query dans la base pour montrer des résultats.
 
 --- ---
