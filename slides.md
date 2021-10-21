@@ -56,7 +56,7 @@ def test_prime(nums):
 
 ### Results
 
-<img src="ptm_run.png" alt="Pytest Monitor run in terminal" width="120%"/>
+<img src="ptm_run.png" alt="Pytest Monitor run in terminal" width="150%"/>
 
 ---
 
