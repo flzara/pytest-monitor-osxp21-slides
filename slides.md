@@ -132,6 +132,22 @@ df = sessions.to_df()
 ---
 
 ## Monitor-server-API conclusion
+
+Easy to use
+easier to fetch and plot data
+Ideal companion to pytest-monitor :)
+
 --- ---
 
+## Use Cases
+
+---
+
+## Know your dependencies
+
+---
+
+## Know your tests
+
+--- ---
 # Questions?
