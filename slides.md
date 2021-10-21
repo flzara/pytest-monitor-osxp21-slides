@@ -15,16 +15,15 @@ Jean-Sébastien Dieu, Architect @ [CFM](https://www.cfm.fr)
 
 --- ---
 
-### Problem setup
+### Context
 
 Let's consider a resource critical function whose job is to check a number primality.
 
----
+### Questions <!-- .element: class="fragment" data-fragment-index="1" -->
 
-### Questions
-
-* how do we monitor the resource consumption ?
-* how do we compare resource usage between runs ?
+* how do we monitor the resource consumption ? <!-- .element: class="fragment" data-fragment-index="1" -->
+* how do we compare resource usage between runs ? <!-- .element: class="fragment" data-fragment-index="2" -->
+* If we rely on a third party, how can we check its updates ? <!-- .element: class="fragment" data-fragment-index="3" -->
 
 ---
  ## Pytest-monitor
