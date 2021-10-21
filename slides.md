@@ -33,12 +33,12 @@ Let's consider a resource critical function whose job is to check a number prima
 
 * it is a pytest plugin <!-- .element: class="fragment" data-fragment-index="1" data-autoslide="1000" -->
 * Few requirements needed (sqlite3, python, memory_profiler and psutils) <!-- .element: class="fragment" data-fragment-index="2" data-autoslide="1000" -->
-* Small footprint (very little overhead, perfectly acceptable for large scale run)  <!-- .element: class="fragment" data-fragment-index="2" data-autoslide="1000" -->
-* Track resources consumed by any test suite <!-- .element: class="fragment" data-fragment-index="3" data-autoslide="1000" -->
+* Small footprint (very little overhead, perfectly acceptable for large scale run)  <!-- .element: class="fragment" data-fragment-index="3" data-autoslide="1000" -->
+* Track resources consumed by any test suite <!-- .element: class="fragment" data-fragment-index="4" data-autoslide="1000" -->
     * Memory
     * Compute time
     * etc.
-* Historize the results <!-- .element: class="fragment" data-fragment-index="4" -->
+* Historize the results <!-- .element: class="fragment" data-fragment-index="5" -->
 
 ---
 With pytest, a possible test would be:
