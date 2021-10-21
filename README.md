@@ -2,6 +2,8 @@
 
 Slides for Pytest-monitor presentation at Open Source Experience on Nov 9th, 2021
 
+Available on [GitHub Pages](https://flzara.github.io/pytest-monitor-osxp21-slides).
+
 Based on [reveal.js](https://revealjs.com/)
 
 ## Instructions
@@ -13,6 +15,10 @@ $ git checkout gh-pages
 
 - File to edit : [slides en markdown](slides.md)
 - Generated on Pages using GitHub Actions
+
+## Tips & tricks
+
+Record a terminal session : https://www.justegeek.fr/enregistrer-session-terminal-gif-ttygif/
 
 ## Licenses
 
