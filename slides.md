@@ -28,7 +28,7 @@ Let's consider a resource critical function whose job is to check a number prima
 
 ---
 
-## Pytest-monitor  
+## Pytest-monitor 
 
 * it is a pytest plugin <!-- .element: class="fragment" data-fragment-index="1" data-autoslide="1000" -->
 * Few requirements needed (sqlite3, python, memory_profiler and psutils) <!-- .element: class="fragment" data-fragment-index="2" data-autoslide="1000" -->
@@ -52,13 +52,13 @@ def test_prime(nums):
 
 ---
 
-## Pytest-monitor results
+## Results
 
 ![Pytest Monitor run in terminal](ptm_run.png)
 
 ---
 
-## Let's read our data!
+## Fetch data
 
 ```sql
 sqlite> select ITEM, TOTAL_TIME, CPU_USAGE, MEM_USAGE, ITEM_PATH from TEST_METRICS;
@@ -85,7 +85,7 @@ Leverage pytest-monitor:
 
 ---
 
-## Monitor-server-API introduction
+## Introduction
 
 The package is split in 2 components:
  * The REST server for storing and fetching data (flask + uwsgi + SQLite or PostGreSQL)
@@ -95,7 +95,7 @@ The package is split in 2 components:
 
 ---
 
-## Monitor-server-API example, sending data
+## Example: sending data
 
 ```bash
 bash $> pytest --remote http://my-monitor-server.org/api/v1 --tag demo=yes
@@ -117,7 +117,7 @@ pkg5/test_special_pytest.py sss  [100%]
 
 ---
 
-## Monitor-server-API example, fetching data
+## Example, fetching data
 
 
 ```python
@@ -131,7 +131,7 @@ df = sessions.to_df()
 
 ---
 
-## Monitor-server-API conclusion
+## conclusion
 
 Easy to use
 easier to fetch and plot data
