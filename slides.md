@@ -56,7 +56,18 @@ def test_prime(nums):
 
 ![Pytest Monitor run in terminal](ptm_run.png)
 
-* faire une query dans la base pour montrer des résultats.
+```sql
+sqlite> select ITEM, TOTAL_TIME, CPU_USAGE, MEM_USAGE, ITEM_PATH from TEST_METRICS;
+test_sleep1|1.00518894195557|0.0|0.76953125|pkg1.test_mod1
+test_heavy|0.00533604621887207|0.0|0.80078125|pkg1.test_mod1
+test_heavy|0.00467038154602051|2.14115268773291|0.8125|pkg1.test_mod1
+test_heavy|0.00461006164550781|0.0|1.26953125|pkg1.test_mod1
+test_heavy|0.0324029922485352|0.925840421461576|1.51953125|pkg1.test_mod1
+test_sleep_400ms|0.405560970306396|0.0246572050373711|1.51953125|pkg1.test_mod2
+test_master_sleep|5.00535321235657|0.998930502578049|1.51953125|pkg2.test_mod_a
+test_method1|0.506380081176758|0.0|1.51953125|pkg3.test_mod_cl
+test_force_monitor|5.0064685344696|0.998707964621156|1.51953125|pkg4.test_mod_a
+```
 
 --- ---
 
