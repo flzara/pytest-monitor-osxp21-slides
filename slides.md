@@ -15,20 +15,22 @@ Jean-Sébastien Dieu, Architect @ [CFM](https://www.cfm.fr)
 
 --- ---
 
-# Problem setup
+### Problem setup
 
 Let's consider a resource critical function whose job is to check a number primality.
 
 ---
 
-## Questions
+### Questions
 
 * how do we monitor the resource consumption ?
 * how do we compare resource usage between runs ?
 
 ---
+ ## Pytest-monitor
+---
 
-## Pytest-monitor 
+### About 
 
 * it is a pytest plugin <!-- .element: class="fragment" data-fragment-index="1" data-autoslide="1000" -->
 * Few requirements needed (sqlite3, python, memory_profiler and psutils) <!-- .element: class="fragment" data-fragment-index="2" data-autoslide="1000" -->
@@ -52,13 +54,13 @@ def test_prime(nums):
 
 ---
 
-## Results
+### Results
 
 ![Pytest Monitor run in terminal](ptm_run.png)
 
 ---
 
-## Fetch data
+### Fetch data
 
 ```sql
 sqlite> select ITEM, TOTAL_TIME, CPU_USAGE, MEM_USAGE, ITEM_PATH from TEST_METRICS;
@@ -74,8 +76,9 @@ test_force_monitor|5.0064685344696|0.998707964621156|1.51953125|pkg4.test_mod_a
 ```
 
 --- ---
-
-# Monitor-server-API
+ ## Monitor-server-API
+---
+### About
 
 Leverage pytest-monitor:
 
@@ -85,7 +88,7 @@ Leverage pytest-monitor:
 
 ---
 
-## Introduction
+### Introduction
 
 The package is split in 2 components:
  * The REST server for storing and fetching data (flask + uwsgi + SQLite or PostGreSQL)
@@ -95,7 +98,7 @@ The package is split in 2 components:
 
 ---
 
-## Example: sending data
+### Example: sending data
 
 ```bash
 bash $> pytest --remote http://my-monitor-server.org/api/v1 --tag demo=yes
@@ -117,7 +120,7 @@ pkg5/test_special_pytest.py sss  [100%]
 
 ---
 
-## Example, fetching data
+### Example, fetching data
 
 
 ```python
@@ -131,7 +134,7 @@ df = sessions.to_df()
 
 ---
 
-## conclusion
+### conclusion
 
 Easy to use
 easier to fetch and plot data
@@ -139,15 +142,15 @@ Ideal companion to pytest-monitor :)
 
 --- ---
 
-## Use Cases
+# Use Cases
 
 ---
 
-## Know your dependencies
+### Know your dependencies
 
 ---
 
-## Know your tests
+### Know your tests
 
 --- ---
 # Questions?
