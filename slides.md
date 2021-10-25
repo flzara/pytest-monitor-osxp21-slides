@@ -84,11 +84,15 @@ test_force_monitor|5.0064685344696|0.998707964621156|1.51953125|pkg4.test_mod_a
 
 Leverage pytest-monitor with 2 building blocks:
 
- - API (Python) <!-- .element: class="fragment" data-fragment-index="1" -->
+ - API (Python)
    * dedicated to query and fetch your data
    * works seemlessly with a local pytest-monitor database
- 
- - Server (REST) <!-- .element: class="fragment" data-fragment-index="2" -->
+---
+##### About
+
+Leverage pytest-monitor with 2 building blocks:
+
+ - Server (REST)
    * manage a dedicated storage (through REST API) to insert metrics
    * enable parallelism in your test session (xdist support)
 
