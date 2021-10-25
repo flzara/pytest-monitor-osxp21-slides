@@ -48,17 +48,17 @@ def test_prime(n):
 
 ##### Results
 
-```bash
-bash $> pytest
+```
+bash $> pytest --tag demo=yes --tag talk=ospo
 
-=============================================== test session starts ===============================================
+======================== test session starts ========================
 platform linux -- Python 3.6.8, pytest-4.4.1, py-1.8.0, pluggy-0.11.0
 rootdir: /home/jdieu/projects/ospoxp/pytest-monitor
 plugins: monitor-1.6.2
-collected 14 items                                                                                                                                                                                                
-test/test_primality.py .....         [ 100%]
+collected 5 items
+test/test_primality.py .....                                  [ 100%]
 
-============================================== 5 passed 20.13 seconds =============================================
+======================= 5 passed 20.13 seconds ======================
 ```
 ---
 
@@ -80,7 +80,7 @@ test_force_monitor|5.0064685344696|0.998707964621156|1.51953125|pkg4.test_mod_a
 --- ---
  ## Monitor-server-API
 ---
-### About
+##### About
 
 Leverage pytest-monitor with 2 building blocks:
 
@@ -94,47 +94,36 @@ Leverage pytest-monitor with 2 building blocks:
 
 ---
 
-### Introduction
+##### Full integration
 
-The package is split in 2 components:
- * The REST server for storing and fetching data (flask + uwsgi + SQLite or PostGreSQL)
- * The API designed to easily query and filter data either from either (requests + Pandas)
-<!-- Coucou .element: class="fragment" data-fragment-index="2" -->
-<!-- ReCoucou .element: class="fragment" data-fragment-index="1" -->
+```
+bash $> pytest --remote http://my-monitor-server.org/api/v1 --tag demo=yes --tag talk=ospo
 
----
-
-### Example: sending data
-
-```bash
-bash $> pytest --remote http://my-monitor-server.org/api/v1 --tag demo=yes
-
-=============================================================================================== test session starts ===============================================================================================
+======================== test session starts ========================
 platform linux -- Python 3.6.8, pytest-4.4.1, py-1.8.0, pluggy-0.11.0
 rootdir: /home/jdieu/projects/perso/pytest-monitor
-plugins: monitor-1.6.0
-collected 14 items                                                                                                                                                                                                
-pkg1/test_mod1.py ......         [ 42%]
-pkg1/test_mod2.py .              [ 50%]
-pkg2/test_mod_a.py .             [ 57%]
-pkg3/test_mod_cl.py .            [ 64%]
-pkg4/test_mod_a.py ..            [ 78%]
-pkg5/test_special_pytest.py sss  [100%]
+plugins: monitor-1.6.2
+collected 5 items
+test/test_primality.py .....                                  [ 100%]
 
-====================================================================================== 11 passed, 3 skipped in 20.13 seconds ======================================================================================
+======================= 5 passed 20.13 seconds ======================
 ```
 
 ---
 
-### Example, fetching data
+##### Example, fetching data with the API
 
 
 ```python
-from monitor_server_api import Monitor
+from monitor_server_api import Monitor, Field
 
 mon = Monitor('http://my-monitor-server.org/api/v1')
 sessions = mon.list_sessions()
-df = sessions.to_df()
+metrics = mon.list_metrics_from(sessions)
+df = metrics.to_df(sessions,
+                   keep=[Field.ITEM_VARIANT, Field.TOTAL_TIME,
+                         Field.ITEM_START_TIME, Field.MEM_USAGE,
+                         Field.SCM])
 
 ```
 ---
@@ -156,11 +145,12 @@ df = sessions.to_df()
 
 ---
 
-### conclusion
+##### conclusion
 
-Easy to use
-easier to fetch and plot data
-Ideal companion to pytest-monitor :)
+* Easy to fetch and plot data
+* No need to worry about internal data model
+* Enables parallelism
+* Ideal companion to pytest-monitor :)
 
 --- ---
 
