@@ -131,7 +131,7 @@ sessions = mon.list_sessions()
 df = sessions.to_df()
 
 ```
-
+---
 <style>.container{
     display: flex;
 }
