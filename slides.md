@@ -15,11 +15,11 @@ Jean-Sébastien Dieu, Architect @ [CFM](https://www.cfm.fr)
 
 --- ---
 
-### Context
+#### Context
 
 Let's consider a resource critical function whose job is to check a number primality.
 
-### Questions <!-- .element: class="fragment" data-fragment-index="1" -->
+##### Questions <!-- .element: class="fragment" data-fragment-index="1" -->
 
 * how do we monitor the resource consumption ? <!-- .element: class="fragment" data-fragment-index="1" -->
 * how do we compare resource usage between runs ? <!-- .element: class="fragment" data-fragment-index="2" -->
@@ -29,7 +29,7 @@ Let's consider a resource critical function whose job is to check a number prima
  ## Pytest-monitor
 ---
 
-### About 
+##### About 
 
 * it is a pytest plugin <!-- .element: class="fragment" data-fragment-index="1" data-autoslide="1000" -->
 * Few requirements needed (sqlite3, python, memory_profiler and psutils) <!-- .element: class="fragment" data-fragment-index="2" data-autoslide="1000" -->
@@ -54,13 +54,13 @@ def test_prime(nums):
 
 ---
 
-### Results
+##### Results
 
 <img src="ptm_run.png" alt="Pytest Monitor run in terminal" width="150%"/>
 
 ---
 
-### Fetch data
+##### Fetch data
 
 ```sql
 sqlite> select ITEM, TOTAL_TIME, CPU_USAGE, MEM_USAGE, ITEM_PATH from TEST_METRICS;
