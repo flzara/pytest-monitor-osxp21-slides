@@ -141,10 +141,10 @@ df = sessions.to_df()
 </style>
 <div class="container">
   <div class="col">
-    Column 1 Content
+    <img src='mem_usage.png'>
   </div>
   <div class="col">
-    Column 2 Content
+    <img src='time.png'>
   </div>
 </div>
 
