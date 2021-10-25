@@ -56,7 +56,7 @@ platform linux -- Python 3.6.8, pytest-4.4.1, py-1.8.0, pluggy-0.11.0
 rootdir: /home/jdieu/projects/ospoxp/pytest-monitor
 plugins: monitor-1.6.2
 collected 5 items
-test/test_primality.py .....                                  [ 100%]
+test/test_primality.py .....                              [ 100%]
 
 ======================= 5 passed 20.13 seconds ======================
 ```
@@ -108,7 +108,7 @@ platform linux -- Python 3.6.8, pytest-4.4.1, py-1.8.0, pluggy-0.11.0
 rootdir: /home/jdieu/projects/perso/pytest-monitor
 plugins: monitor-1.6.2
 collected 5 items
-test/test_primality.py .....                                  [ 100%]
+test/test_primality.py .....                              [ 100%]
 
 ======================= 5 passed 20.13 seconds ======================
 ```
