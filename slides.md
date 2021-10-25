@@ -101,7 +101,7 @@ Leverage pytest-monitor with 2 building blocks:
 ##### Full integration
 
 ```
-bash $> pytest --remote http://my-monitor-server.org/api/v1 --tag demo=yes --tag talk=ospo
+bash $> pytest --remote $URL --tag demo=yes --tag talk=ospo
 
 ======================== test session starts ========================
 platform linux -- Python 3.6.8, pytest-4.4.1, py-1.8.0, pluggy-0.11.0
