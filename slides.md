@@ -33,27 +33,37 @@ Let's consider a resource critical function whose job is to check a number prima
 * Historize the results <!-- .element: class="fragment" data-fragment-index="5" -->
 
 ---
-With pytest, a possible test would be:
+With pytest, our test might look like:
 
 ```python [1-6]
 import pytest
 from my_package import is_prime
 
+
 @pytest.mark.parametrize('n', [2, 3, 997, 104743, 982451653])
 def test_prime(n):
     assert is_prime(n)
 ```
-
 ---
 
 ##### Results
 
-<img src="ptm_run.png" alt="Pytest Monitor run in terminal" width="150%"/>
+```bash
+bash $> pytest
 
+=============================================== test session starts ===============================================
+platform linux -- Python 3.6.8, pytest-4.4.1, py-1.8.0, pluggy-0.11.0
+rootdir: /home/jdieu/projects/ospoxp/pytest-monitor
+plugins: monitor-1.6.2
+collected 14 items                                                                                                                                                                                                
+test/test_primality.py .....         [ 100%]
+
+============================================== 5 passed 20.13 seconds =============================================
+```
 ---
 
 ##### Fetch data
-
+ TODO change data
 ```sql
 sqlite> select ITEM, TOTAL_TIME, CPU_USAGE, MEM_USAGE, ITEM_PATH from TEST_METRICS;
 test_sleep1|1.00518894195557|0.0|0.76953125|pkg1.test_mod1
@@ -72,11 +82,15 @@ test_force_monitor|5.0064685344696|0.998707964621156|1.51953125|pkg4.test_mod_a
 ---
 ### About
 
-Leverage pytest-monitor:
+Leverage pytest-monitor with 2 building blocks:
 
- - dedicated Python API to query and fetch your data
- - dedicated storage (through REST API), but works seemlessly with a local pytest-monitor database.
- - enable parallelism in your test session.
+ - API (Python) <!-- .element: class="fragment" data-fragment-index="1" -->
+   * dedicated to query and fetch your data
+   * works seemlessly with a local pytest-monitor database
+ 
+ - Server (REST) <!-- .element: class="fragment" data-fragment-index="2" -->
+   * manage a dedicated storage (through REST API) to insert metrics
+   * enable parallelism in your test session (xdist support)
 
 ---
 
