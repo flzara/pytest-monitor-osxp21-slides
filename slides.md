@@ -150,7 +150,7 @@ df = metrics.to_df(sessions,
 * Easy to fetch and plot data
 * No need to worry about internal data model
 * Enables parallelism
-* Ideal companion to pytest-monitor :)
+* Perfect companion to pytest-monitor :)
 
 --- ---
 
