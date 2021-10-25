@@ -132,6 +132,22 @@ df = sessions.to_df()
 
 ```
 
+<style>.container{
+    display: flex;
+}
+.col{
+    flex: 1;
+}
+</style>
+<div class="container">
+  <div class="col">
+    Column 1 Content
+  </div>
+  <div class="col">
+    Column 2 Content
+  </div>
+</div>
+
 ---
 
 ### conclusion
