@@ -1,6 +1,7 @@
 ### Monitor your Python tests to optimise your code!
 
 Jean-Sébastien Dieu, Architect @ [CFM](https://www.cfm.fr)
+
 jean-sebastien.dieu@cfm.fr
 
 --- ---
@@ -160,4 +161,10 @@ Ideal companion to pytest-monitor :)
 ### Know your tests
 
 --- ---
-# Questions?
+### Questions?
+--- ---
+### Addendum
+---
+##### Data Model
+
+---
