@@ -39,9 +39,9 @@ With pytest, a possible test would be:
 import pytest
 from my_package import is_prime
 
-@pytest.mark.parametrize('nums', [2, 3, 997, 104743, 982451653])
-def test_prime(nums):
-    assert is_prime(nums)
+@pytest.mark.parametrize('n', [2, 3, 997, 104743, 982451653])
+def test_prime(n):
+    assert is_prime(n)
 ```
 
 ---
