@@ -140,10 +140,10 @@ df = metrics.to_df(sessions,
 </style>
 <div class="container">
   <div class="col">
-    <img src='mem_usage.png'>
+    <img src='ptm_wall.png'>
   </div>
   <div class="col">
-    <img src='time.png'>
+    <img src='ptm_mem.png'>
   </div>
 </div>
 
@@ -164,9 +164,23 @@ df = metrics.to_df(sessions,
 
 ### Know your dependencies
 
+ - Migrating a dependencies (e.g.: pandas) can lead to
+   - behavioral change
+   - performance degradation on your core features
+ 
+ - Tracking your application’s resource footprint can
+   - prevent unwanted resource consumption
+   - help you validate your requirements's version
+
 ---
 
 ### Know your tests
+
+ - Applying load to a system can harm the performances
+ - Analyzing resources can 
+    - provide comprehensive view of tests and their category
+    - help determining problems
+    - validate new dev
 
 --- ---
 ### Questions?
